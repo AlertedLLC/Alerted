@@ -1,0 +1,286 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<link rel="stylesheet" type="text/css" href="inc/main.css">
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				try
+				{
+					//LoadMissingPerson();
+
+					// Load data for missing person
+					$.getJSON("http://dev-site.citizenhub.org/alerted/parser.php?id="+localStorage['child']+"&callback=?",
+					  "",
+					  	function (data){
+
+
+					  		// set image
+							$("#profileImage").attr('src', "http://www.missingkids.com"+data.profileImage);
+
+							// populate fields with missing person data
+							$("#name").text(data.name);
+							$("#caseType").text(data.caseType);
+							$("#dob").text(data.dob);
+							$("#missingDate").text(data.missingDate);
+							$("#ageNow").text(data.ageNow);
+							$("#missingCity").text(data.missingCity);
+							$("#missingState").text(data.missingState);
+							$("#missingCountry").text(data.missingCountry);
+							$("#sex").text(data.sex);
+							$("#race").text(data.race);
+							$("#height").text(data.height);
+							$("#weight").text(data.weight);
+							$("#hairColor").text(data.hairColor);
+							$("#eyeColor").text(data.eyeColor);
+							$("#caseNumber").text(data.caseNumber);
+							$("#circumstances").text(data.circumstances);
+
+							// populate suspect data
+							$("#suspectName").text(data.suspectName);
+							$("#suspectSex").text(data.suspectSex);
+							$("#suspectRace").text(data.suspectRace);
+							$("#suspectHeight").text(data.suspectHeight);
+							$("#suspectWeight").text(data.suspectWeight);
+							$("#suspectHairColor").text(data.suspectHairColor);
+							$("#suspectEyeColor").text(data.suspectEyeColor);
+
+							// populate additional info
+							$("#additionalInfo").text(data.additionalInfo);
+					  	}
+					  );
+
+					$('#backButton').click(function (){
+						document.location.href="index.html";
+					});
+				}
+				catch(err)
+				{
+					// DELETE THIS BEFORE DEPLOYING
+					alert(err);
+				}			
+				
+
+
+				function LoadMissingPerson(data)
+				{
+					// data check for id of missing person
+					//localStorage.id
+					// load missing person
+					/*
+					var data = {
+									'name':'First Name Last Name',
+									'caseType':'type of case', 
+									'dob': '4/4/4', 
+									'missingDate': '4/4/4', 
+									'ageNow': '14', 
+									'missingCity': 'missingCity', 
+									'missingState': 'missingState', 
+									'missingCountry': 'missingCountry', 
+									'sex': 'Male', 
+									'race': 'other', 
+									'height': '5 ft. 8in.', 
+									'weight': '145lbs', 
+									'hairColor': 'brown', 
+									'eyeColor': 'brown', 
+									'caseNumber': '333', 
+									'circumstances': 'ljlkdsaj fllkj slkfjsd lkfjds lakfj lsakdjlkdsfj sldkj flkjsdlkfjsdlkajfldsk kljlksd fjlkdsj lkjslkdfjd s kl', 
+									'profileImage': '', 
+									'ageProgressed': '', 
+									'suspectProfileImage':'',
+									'suspectName': 'Suspect First Name Suspect Last Name', 
+									'suspectSex': 'Male', 
+									'suspectRace': 'other', 
+									'suspectHeight': '5 ft. 8in.', 
+									'suspectWeight': '145lbs', 
+									'suspectHairColor': 'brown', 
+									'suspectEyeColor': 'brown', 
+									'additionalInfo': 'fldkjfdasjf lksfjadslfkjd  jsdlkf jaslj lsdkfjasldkjfdslkjf jdlk lksdj  lsj lk jdlfksdjlkfdsjf lkjsdfl sajlkfj sdlk jldsjfldslkjflkasd flkj lksajf sd'
+								};
+					*/
+					
+
+					// set image
+					$("#profileImage").attr('src', data.profileImage);
+					$("#profileImage").attr('src', data.ageProgressed);
+
+					// populate fields with missing person data
+					$("#name").text(data.name);
+					$("#caseType").text(data.caseType);
+					$("#dob").text(data.dob);
+					$("#missingDate").text(data.missingDate);
+					$("#ageNow").text(data.ageNow);
+					$("#missingCity").text(data.missingCity);
+					$("#missingState").text(data.missingState);
+					$("#missingCountry").text(data.missingCountry);
+					$("#sex").text(data.sex);
+					$("#race").text(data.race);
+					$("#height").text(data.height);
+					$("#weight").text(data.weight);
+					$("#hairColor").text(data.hairColor);
+					$("#eyeColor").text(data.eyeColor);
+					$("#caseNumber").text(data.caseNumber);
+					$("#circumstances").text(data.circumstances);
+
+					// populate suspect data
+					$("#suspectName").text(data.suspectName);
+					$("#suspectSex").text(data.suspectSex);
+					$("#suspectRace").text(data.suspectRace);
+					$("#suspectHeight").text(data.suspectHeight);
+					$("#suspectWeight").text(data.suspectWeight);
+					$("#suspectHairColor").text(data.suspectHairColor);
+					$("#suspectEyeColor").text(data.suspectEyeColor);
+
+					// populate additional info
+					$("#additionalInfo").text(data.additionalInfo);
+				}
+			});	
+		</script>	
+	</head>
+	<body id="details-page">
+		<div id="wrapper">
+			<header>
+				<div  id="backButton" onclick="window.location.href='index.html';"> <span>Back</span>  </div> <!--  <h2>Main Details</h2> -->
+			</header>
+			<div id="content-info">
+	<section id="BasicInfoSection">
+
+		<div id="basic-info-all">
+				<!-- <header>  tEST</header>  
+					<img id="profileImage" src="http://www.almostsavvy.com/wp-content/uploads/2011/04/profile-photo.jpg" alt="" /> -->
+					<img id="profileImage" src="inc/person-img.jpg" alt="" /> 
+
+					 <div id="basicInfoPanel1">
+
+						<label for="name">Name: </label>&nbsp;<span id="name"></span> <br/>
+						<label for="sex">Sex: </label>&nbsp;<span id="sex"></span> <br/>
+						<label for="race">Race: </label>&nbsp;<span id="race"></span> <br/>
+						<label for="height">Height: </label>&nbsp;<span id="height"></span> <br/>
+						<label for="weight">Weight: </label>&nbsp;<span id="weight"></span> <br/>
+						<label for="hairColor">Hair Color: </label>&nbsp;<span id="hairColor"></span> <br/>
+						<label for="eyeColor">Eye Color: </label>&nbsp;<span id="eyeColor"></span> <br/>
+					<!-- 	<label for="caseNumber">Case Number: </label>&nbsp;<span id="caseNumber"></span> <br/>
+						<label for="circumstances">Circumstances: </label><br/><span id="circumstances"></span> -->
+					</div>
+
+					<div class="clear"></div>
+
+					<!-- <hr>
+					
+					
+						<button  class="alertButtons" id="shareButton" onclick="">   </button> 
+						<button  class="alertButtons" id="dialButton" onclick="">   </button>
+						<button  class="alertButtons" onclick="">   </button>		 -->	
+
+
+		</div>	
+				<div class="clear"></div>
+
+
+		<div id="buttons-holder">
+			<div class="btn"><img src="inc/ico_waypoint.png" /></div>
+			<div class="btn"><img src="inc/ico_share.png" /></div>
+		
+		<img src="inc/citizenhub.png" class="chlogo" onclick="window.location.href='http://www.hub.tl/alerted';" />
+<br clear="all" />
+		</div>		
+
+				<div id="basicInfoPanel2"> 
+					<label for="caseType">Case Type: </label>&nbsp;<span id="caseType"></span> <br/>
+					<label for="dob">DOB: </label>&nbsp;<span id="dob"></span> <br/>
+					<label for="missingDate">Missing Date: </label>&nbsp;<span id="missingDate"></span> <br/>
+					<label for="ageNow">Age Now: </label>&nbsp;<span id="ageNow"></span> <br/>
+					<label for="missingCity">Missing City: </label>&nbsp;<span id="missingCity"></span> <br/>
+					<label for="missingState">Missing State: </label>&nbsp;<span id="missingState"></span> <br/>
+					<label for="missingCountry">Missing Country: </label>&nbsp;<span id="missingCountry"></span> 
+				</div>	
+			</section> 
+			<!--
+			<section id="SuspectInfoSection">
+				<header>Suspect Info</header>
+				<img id="suspectProfileImg" src="http://www.almostsavvy.com/wp-content/uploads/2011/04/profile-photo.jpg" alt=""/>
+				<div id="suspectInfoPanel">
+					<label for="suspectName">Name: </label>&nbsp;<span id="suspectName"></span> <br/>
+					<label for="suspectSex">Sex: </label>&nbsp;<span id="suspectSex"></span> <br/>
+					<label for="suspectRace">Race: </label>&nbsp;<span id="suspectRace"></span> <br/>
+					<label for="suspectHeight">Height: </label>&nbsp;<span id="suspectHeight"></span> <br/>
+					<label for="suspectWeight">Weight: </label>&nbsp;<span id="suspectWeight"></span> <br/>
+					<label for="suspectHairColor">Hair Color: </label>&nbsp;<span id="suspectHairColor"></span> <br/>
+					<label for="suspectEyeColor">Eye Color: </label>&nbsp;<span id="suspectEyeColor"></span>
+				</div>	
+			</section>
+			-->
+		</div>
+			
+			<footer>
+				<img src="inc/logo.png" id="logo" />
+				<div id="address-box">
+					<div id="search-current"><img src="inc/current_btn.png" onclick="myLoc();" /></div>
+					<select onchange="getPins(this.value);">
+						<option value="NoState">Please Select a State...</option>
+<option value="AL">Alabama
+<option value="AK">Alaska
+<option value="AZ">Arizona
+<option value="AR">Arkansas
+<option value="CA">California
+<option value="CO">Colorado
+<option value="CT">Connecticut
+<option value="DE">Delaware
+<option value="FL">Florida
+<option value="GA">Georgia
+<option value="HI">Hawaii
+<option value="ID">Idaho
+<option value="IL">Illinois
+<option value="IN">Indiana
+<option value="IA">Iowa
+<option value="KS">Kansas
+<option value="KY">Kentucky
+<option value="LA">Louisiana
+<option value="ME">Maine
+<option value="MD">Maryland
+<option value="MA">Massachusetts
+<option value="MI">Michigan
+<option value="MN">Minnesota
+<option value="MS">Mississippi
+<option value="MO">Missouri
+<option value="MT">Montana
+<option value="NE">Nebraska
+<option value="NV">Nevada
+<option value="NH">New Hampshire
+<option value="NJ">New Jersey
+<option value="NM">New Mexico
+<option value="NY">New York
+<option value="NC">North Carolina
+<option value="ND">North Dakota
+<option value="OH">Ohio
+<option value="OK">Oklahoma
+<option value="OR">Oregon
+<option value="PA">Pennsylvania
+<option value="RI">Rhode Island
+<option value="SC">South Carolina
+<option value="SD">South Dakota
+<option value="TN">Tennessee
+<option value="TX">Texas
+<option value="UT">Utah
+<option value="VT">Vermont
+<option value="VA">Virginia
+<option value="WA">Washington
+<option value="DC">Washington D.C.
+<option value="WV">West Virginia
+<option value="WI">Wisconsin
+<option value="WY">Wyoming
+</select>
+					<!--
+					<div id="search-current"><img src="inc/current_btn.png" onclick="myLoc();" /></div>
+					<input type="text" id="address" value="address..." onFocus="this.value='';" />
+					<div id="search-button"><img src="inc/search_btn.png" onclick="placeMarkerAddress();" /></div>
+					-->
+				</div>
+			</footer>
+   		</div>
+   		
+	</body>
+</html>
