@@ -1,0 +1,129 @@
+* { margin: 0px; padding: 0px;  -webkit-appearance: none; outline: none; resize: none; list-style: none; }
+a{ text-decoration: none; color: #fff; font-weight: bold; }
+
+html, body  { width: 100%;  height: 100%; }
+
+#wrapper { position: absolute; width: 320px; height: 460px; background: #333; overflow: hidden; }
+ 
+#alert-wrapper { display: none; position: absolute; z-index: 99; top: 0px; right: 0px; left: 0px; }
+	#alert {  position: relative; width: 320px; height: 180px; background: url('amber_bg.png'); background-size: 320px 161px; -webkit-background-size: 320px 161px; }
+		#close { position: absolute; right: 0px; top: 0px; width: 37px; height: 41px; }
+	#alert-image { position: absolute; top: 0px; left: 0px; width: 125px; height: 125px; }
+		#alert-image img { margin: 10px; width: 80px; height: 80px; position: absolute; box-shadow: 2px 2px 0px #8c6e25; }
+	#alert-shadow { position: relative; height: 10px; width: 320px;  background: url('shadow.png'); background-size: 10px 10px; -webkit-background-size: 10px 10px;  }
+#content { position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 1; } 
+#content-info { position: absolute; top: 45px; right: 0px; bottom: 55px; left: 0px; z-index: 1; overflow-y: auto; }
+ 
+footer { position: absolute; bottom:0px; left: 0px; width: 320px; height: 55px; z-index: 2; background: #3d3836; } 
+#logo { position: absolute: left: 0px; top: 0px; width: 55px; height: 55px; border-right: 1px solid #332e2c; background: #45403e; }
+#logo img { width: 55px; height: 55px; }
+	.logo-selected { background: #fff; }
+#address-box { font-family: arial !important; font-size: 12px !important; color: #fff !important; position: absolute; left: 70px; right: 15px; top: 10px; bottom: 10px; border: 1px solid #332e2c; background: #fff; }
+	#address-box span {font-family: arial !important; font-size: 12px !important; color: #fff !important; }
+	#search-current img{ position: absolute; float: left; width: 16px; height: 16px; top: 8px; left: 10px; }
+	#address{ position: absolute; float: left; width: 150px; height: 16px; top: 0px; bottom: 0px; padding: 16px 0px; left: 40px; font-size: 12px; border: none; }
+	.address-details { position: absolute; float: left; width: 150px; height: 16px; top: 0px; bottom: 0px; padding: 8px 0px !important; left: 40px; font-size: 12px; border: none; }
+	#search-button img { position: absolute; float: left; width: 16px; height: 16px; top: 8px; right: 10px; }
+
+#address-box select { position: relative; float: left; left: 35px;  width: 200px; height: 100%; border-radius: 0px; padding: 0px 10px; border-color: transparent; background: url('drop_arrow.png') center right no-repeat #fff; }
+
+#alert-extra { position: absolute; bottom: 0px; left: 0px; height: 45px;  background: url('background_alert_bottom.png'); background-size: 320px 40px; -webkit-background-size: 320px 40px; width: 100%; }
+.button { position: relative; border-right: 1px solid #8c6e25; background: #a58521; padding: 10px; padding-bottom: 7px; float: left; }
+.emergency { font-family: arial !important; font-size: 12px !important; width: 50px; color: #fff !important; position: relative; border-right: 1px solid #8c6e25; background: #a58521; padding: 15px 15px; padding-bottom: 15px; text-align: center; float: left; }
+
+.button img { width: 28px; height: 28px; }
+
+#alert-description { font-family: arial !important; font-size: 12px !important; color: #fff !important; position: absolute; left: 105px; top: 10px; }
+.alert-description-title{ display: block; float: left; font-family: arial !important; font-size: 12px !important;font-weight: bold; color: #000 !important; width: 60px; }
+.alert-description-item{ font-family: arial !important; font-size: 12px !important; color: #222 !important; margin-right: 10px; }
+
+#select-menu { display: none; position: absolute; bottom: 55px; }
+#select-menu li { position: relative; width: 100%; background: #fff; color: #333; padding: 20px; width: 280px; z-index: 99; font-size: 12px; font-family: arial; font-weight: bold; border-top: 1px solid #ddd; }
+
+
+/*---------------Details Page----------------*/
+
+#details-page
+{
+	background: #eee;
+}
+#details-page #wrapper header
+{	
+
+	height: 50px; width: 100%;
+	background: #444;	
+}
+#backButton
+{
+	background: #222;
+	color: #eee;
+	cursor: pointer;
+	width: 80px;
+	text-align: center;
+	font-size: 12px;
+	font-family: arial;
+	height: 50px; 
+	border: none;
+	cursor: pointer;
+}
+
+#backButton span { position: relative; top: 15px; }
+#button-wrap
+{
+	background:#68b5db; height: 30px;
+}
+
+.btn { position: relative; float: left; width: 60px; height: 60px; border-right: 1px solid #333; text-align: center; }
+.btn img { width: 35px; height: 35px; position: relative; top: 15px;  }
+
+#content-info
+{
+	float: left; clear: both; height: 100%; top: 45px;
+	background: #eee;
+}
+#profileImage
+{
+	float: left; margin-right: 10px;
+	width: 60px; border: 1px solid #5da9ce;
+}
+
+#basicInfoPanel1, #basicInfoPanel2
+{
+   float: left;
+   font-family: Arial;
+   line-height: 18px;
+   font-size: 11px; 
+   font-weight: bold;
+   color: #45403E;
+}
+#basic-info-all
+{
+	height: 130px; padding: 10px; background: #e3e8d9; 
+}
+#basicInfoPanel2
+{
+	padding: 10px; width: 100%; min-height: 180px; background: #ddd; margin-bottom: 100px; 
+}
+#buttons-holder {
+	background: #555; height: 60px; position: relative; }
+#citizenHub
+{
+	background: #016094; height: 60px; position: relative;
+}
+
+.chlogo { position: absolute; right: 7px; top: 7px; }
+
+/*--------------Universal-----------*/
+.clear
+{
+	clear: both;
+}
+hr
+{
+	margin-top: 10px;
+	height: 1px;
+border: 0;
+color: #6ab7dd;
+background-color: #6ab7dd;
+width: 100%;
+}

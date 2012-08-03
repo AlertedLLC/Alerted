@@ -1,0 +1,11 @@
+{
+	"status":"active",
+	"name" : "Sarah Smith",
+	"picture":"inc/child.png",
+	"height":"145cm",
+	"weight" : "60lbs",
+	"hair" : "Blonde",
+	"eye" : "Blue",
+	"race" : "White",
+	"sex" : "Female"
+}

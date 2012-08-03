@@ -1,0 +1,125 @@
+<!doctype>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<link  rel="apple-touch-icon-precomposed" sizes="114x114" href="icon.png" />
+		<link rel="apple-touch-startup-image" href="startup.png">
+	<title>Alerted</title>
+	
+	<link rel="stylesheet" type="text/css" href="inc/main.css">
+	<script type="text/javascript" src="inc/jquery.js"></script>
+		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="inc/main.js?val=2" ></script>
+    <script type="text/javascript" charset="utf-8" src="cordova-2.0.0.js"></script>
+	</head>
+	<body>
+		<div id="wrapper">
+			
+			<!-- ALERT BEGINS -->
+			
+			<div id="alert-wrapper">
+			<div id="alert">
+				<img src="inc/close_btn.png" id="close" />
+				<div id="alert-image">
+					<img src="inc/child.png" />
+				</div>
+				<div id="alert-description">
+					<ul id="alert-description-ul">
+						<li><span class="alert-description-title">Name</span><span class="alert-description-item" id="alert-name">Sarah Smith</span></li>
+						<li><span class="alert-description-title">Height</span><span class="alert-description-item" id="alert-height">3ft 3in</span></li>
+						<li><span class="alert-description-title">Weight</span><span class="alert-description-item" id="alert-weight">60lb</span></li>
+						<li><span class="alert-description-title">Hair</span><span class="alert-description-item" id="alert-hair">Blonde</span></li>
+						<li><span class="alert-description-title">Eye</span><span class="alert-description-item" id="alert-eye">Blue</span></li>
+						<li><span class="alert-description-title">Race</span><span class="alert-description-item" id="alert-race">White</span></li>
+						<li><span class="alert-description-title">Sex</span><span class="alert-description-item" id="alert-sex">Female</span></li>
+					</ul>
+				</div>
+				<div id="alert-extra">
+					<div id="alert-location" class="button" onclick="placeMarkerAddressT('New York, NY');"><img src="inc/ico_waypoint.png" /></div>
+					<div id="alert-location" class="button"><img src="inc/ico_share.png" /></div>
+					<div id="alert-location" class="emergency"><a href="phone:911">911</a></div>
+				</div>
+			</div>
+			<div id="alert-shadow"></div>
+			</div>
+			
+			<!-- ALERT ENDS -->
+			
+			<div id="content">
+
+			</div>
+			<ul id="select-menu">
+				<li>My Family</li>
+				<li>Donate</li>
+				<li>Settings</li>
+			</ul>
+			<footer>
+				<div id="logo"><img src="inc/logo.png" /></div>
+				<div id="address-box">
+					<div id="search-current"><img src="inc/current_btn.png" onclick="myLoc();" /></div>
+					<select onchange="getPins(this.value);">
+						<option value="NoState">Please Select a State...</option>
+<option value="AL">Alabama
+<option value="AK">Alaska
+<option value="AZ">Arizona
+<option value="AR">Arkansas
+<option value="CA">California
+<option value="CO">Colorado
+<option value="CT">Connecticut
+<option value="DE">Delaware
+<option value="FL">Florida
+<option value="GA">Georgia
+<option value="HI">Hawaii
+<option value="ID">Idaho
+<option value="IL">Illinois
+<option value="IN">Indiana
+<option value="IA">Iowa
+<option value="KS">Kansas
+<option value="KY">Kentucky
+<option value="LA">Louisiana
+<option value="ME">Maine
+<option value="MD">Maryland
+<option value="MA">Massachusetts
+<option value="MI">Michigan
+<option value="MN">Minnesota
+<option value="MS">Mississippi
+<option value="MO">Missouri
+<option value="MT">Montana
+<option value="NE">Nebraska
+<option value="NV">Nevada
+<option value="NH">New Hampshire
+<option value="NJ">New Jersey
+<option value="NM">New Mexico
+<option value="NY">New York
+<option value="NC">North Carolina
+<option value="ND">North Dakota
+<option value="OH">Ohio
+<option value="OK">Oklahoma
+<option value="OR">Oregon
+<option value="PA">Pennsylvania
+<option value="RI">Rhode Island
+<option value="SC">South Carolina
+<option value="SD">South Dakota
+<option value="TN">Tennessee
+<option value="TX">Texas
+<option value="UT">Utah
+<option value="VT">Vermont
+<option value="VA">Virginia
+<option value="WA">Washington
+<option value="DC">Washington D.C.
+<option value="WV">West Virginia
+<option value="WI">Wisconsin
+<option value="WY">Wyoming
+</select>
+					<!--
+					<div id="search-current"><img src="inc/current_btn.png" onclick="myLoc();" /></div>
+					<input type="text" id="address" value="address..." onFocus="this.value='';" />
+					<div id="search-button"><img src="inc/search_btn.png" onclick="placeMarkerAddress();" /></div>
+					-->
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
